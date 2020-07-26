@@ -36,9 +36,9 @@ else
    J = find(SI);
    S1 = f(J); % Array of seed values.
 end
-figure;
+figure('Name','Final seed image','NumberTitle','off');
 imshow(SI);
-disp(S1);
+title('Final seed image');
 %create zeros matrix same size as f
 TI = false(size(f));
 for K = 1:length(S1)
