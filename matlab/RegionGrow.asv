@@ -25,12 +25,20 @@ if numel(S) == 1
 else
    % S is an array. Eliminate duplicate, connected seed locations 
    % to reduce the number of loop executions in the following 
-   % sections of code.
+   % sections of code. 
+   % With n = Inf, shrinks objects to points. It removes pixels so
+   % that objects without holes shrink to a point, and objects with 
+   % holes shrink to a connected ring halfway between each hole and 
+   % the outer boundary. This option preserves the Euler number 
+   %(also known as the Euler characteristic).
+   
    SI = bwmorph(S, 'shrink', Inf);  
    J = find(SI);
    S1 = f(J); % Array of seed values.
 end
-
+figure;
+imshow(SI);
+disp(S1);
 %create zeros matrix same size as f
 TI = false(size(f));
 for K = 1:length(S1)
@@ -39,6 +47,7 @@ for K = 1:length(S1)
    S = abs(f - seedvalue) <= T;
    TI = TI | S;
 end
+
 % Use function imreconstruct with SI as the marker image to
 % obtain the regions corresponding to each seed in S. Function
 % bwlabel assigns a different integer to each connected region.
