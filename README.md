@@ -10,6 +10,8 @@
       * Form an image 𝑓<sub>𝑄</sub> such that at each point (𝑥,𝑦), 𝑓<sub>𝑄</sub>(𝑥,𝑦)=1 if the input image satisfies a given predicate,𝑄, at those coordinates, and 𝑓<sub>𝑄</sub>(𝑥,𝑦)=0 otherwise.
       * Let 𝑔 be an image formed by appending to each seed point in 𝑆 all the 1-valued points in 𝑓<sub>𝑄</sub> that are 8-connected to that seed point.
       * Label each connected component in 𝑔 with a different region label (e.g.,integers or letters). This is the segmented image obtained by region growing.
+ * 8-connected neighbors
+     ![alt text](https://github.com/bangpc/Region_Growing_and_Region_Merging_Segmentation/blob/master/doc_image/8_neighbors.png)
  
 2.Region Spliting and Merging Segmentation
  * PROBLEM
@@ -18,3 +20,5 @@
  * SOLUTION
       * Split into four disjoint quadrants any region Ri for which Q(R<sub>i</sub>) = FALSE.
       * When no further splitting is possible, merge any adjacent regions Rj and Rk for which Q(R<sub>j</sub> U R<sub>k</sub>) = TRUE.
+ * Quadtree
+     ![alt text](https://github.com/bangpc/Region_Growing_and_Region_Merging_Segmentation/blob/master/doc_image/Quadtree.png)
