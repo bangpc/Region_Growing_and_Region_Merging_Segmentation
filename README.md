@@ -1,5 +1,4 @@
 # Region_Growing_and_Region_Merging_Segmentation
-
 1. Region Growing Segmentation
  * PROBLEM
       * 𝑓(𝑥,𝑦) : input image (shape 𝑚 𝑥 𝑛)
